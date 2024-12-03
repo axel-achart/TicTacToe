@@ -13,3 +13,4 @@ def affichage_grille(grille):
     print(grille[7] + "|" + grille[8] + "|" grille[9])
     print("--------------")
     print(grille)
+# TEST
