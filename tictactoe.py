@@ -54,13 +54,14 @@ print()
 # Demande des emplacements
 question_1 = input("Si vous voulez afficher le tableau des emplacements, entrez 'o' pour OUI ou 'n' pour NON : ")
 if question_1 == "o" or question_1 == "O" or question_1 == "OUI" or question_1 == "oui":
+    print()
     print("Voici le tableau comportant les emplacements attribués :")
     print(emplacement["E1"])
     print(emplacement["E2"])
     print(emplacement["E3"])
     print()
 elif question_1 == "n" or question_1 == "N" or question_1 == "NON" or question_1 == "non":
-    print("Le tableau des emplacements ne s'affiche pas\n")
+    print("Le tableau des emplacements ne s'affiche pas")
 
 
 # Choix des signes pour les joueurs
@@ -112,7 +113,7 @@ def main():
     # Si personne n'a gagné après les 9 tours
     if not result:
         whiteboard()
-        print("Match nul !")
+        print("Aucuns alignements, Match nul !")
 main()
 
 print()
