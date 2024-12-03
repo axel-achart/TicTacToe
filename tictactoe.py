@@ -76,37 +76,51 @@ print(f"Le joueur 2 a le signe '{joueur_2}'")
 
 
 # Boucle principale du jeu
-current_player = joueur_1
-for turn in range(9):
-    whiteboard()
-    print(f"C'est au tour du joueur avec le signe '{current_player}'")
-    while True:
-        try:
-            choix = int(input("Où voulez-vous jouer (1-9) ? ")) - 1
-            if choix < 0 or choix > 8 or board[choix] != " ":
-                raise ValueError     # permet à l'utilisateur de lever lui‑même l'exception de son choix, ici "l'erreur"
-            board[choix] = current_player
-            break
-        except ValueError:  # la clause except traite non seulement la classe d'exception qu'elle mentionne, mais aussi toutes les classes dérivées de cette classe
-            print("Entrée invalide ou case déjà occupée. Réessayez.")
-
-    # Vérifie s'il y a un gagnant ou un match nul
-    result = check_winner()
-    if result:
+def main():
+    current_player = joueur_1
+    for turn in range(9):
         whiteboard()
-        if result == "draw":
-            print("Match nul !")
-        else:
-            print(f"Le joueur avec le signe '{result}' a gagné !")
+        print()
+        print(f"C'est au tour du joueur avec le signe '{current_player}'")
+        while True:
+            try:
+                choix = int(input("Où voulez-vous jouer (1-9) ? ")) - 1
+                if choix < 0 or choix > 8 or board[choix] != " ":
+                    raise ValueError     # permet à l'utilisateur de lever lui‑même l'exception de son choix, ici "l'erreur"
+                board[choix] = current_player
+                break
+            except ValueError:  # la clause except traite non seulement la classe d'exception qu'elle mentionne, mais aussi toutes les classes dérivées de cette classe
+                print("Entrée invalide ou case déjà occupée. Réessayez.")
+
+        # Vérifie s'il y a un gagnant ou un match nul
+        print()
+        result = check_winner()
+        if result:
+            whiteboard()
+            if result == "draw":
+                print("Match nul !")
+            else:
+                print(f"Le joueur avec le signe '{result}' a gagné !")
+            break
+
+        # Change de joueur
+        if current_player == joueur_1:
+            current_player = joueur_2 
+        else: 
+            current_player = joueur_1
+
+    # Si personne n'a gagné après les 9 tours
+    if not result:
+        whiteboard()
+        print("Match nul !")
+main()
+
+print()
+while True:
+    rejouer = input("Voulez-vous rejouez ? (o/n) : ")
+    if rejouer == "o" or rejouer == "oui" or rejouer == "OUI":
+        board = [" "] * 9
+        main()
+    else:
+        print("Au revoir !")
         break
-
-    # Change de joueur
-    if current_player == joueur_1:
-        current_player = joueur_2 
-    else: 
-        current_player = joueur_1
-
-# Si personne n'a gagné après les 9 tours
-if not result:
-    whiteboard()
-    print("Match nul !")
