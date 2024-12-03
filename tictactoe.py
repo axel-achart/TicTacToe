@@ -52,3 +52,30 @@ elif question_1 == "n":
     print("Le tableau des emplacements ne s'affiche pas")
     print()
 #---------------------------------------------------------------------------------------
+
+# Fonction vérification si la grille est rempli ou non
+def rempli():
+    for i in board:
+        if i == "":
+            return False  # Si le tableau contient encore une/des cases vides
+        else:
+            return True  # Si le tableau ne contient plus de case vide
+
+# Fonction Match Nul
+def draw(board):
+    if all(c != " " for row in board for c in row):
+        return True
+    return False
+
+# Fonction pour gagner
+def winable():
+    if ((board[0] == board[1] == board[2] != "") or # WIN Lignes
+            (board[3] == board[4] == board[5] != "") or
+            (board[6] == board[7] == board[8] != "") or
+            (board[0] == board[3] == board[6] != "") or # WIN Colonnes
+            (board[1] == board[4] == board[7] != "") or
+            (board[2] == board[5] == board[8] != "") or
+            (board[0] == board[4] == board[8] != "") or # WIN Diagonales
+            (board[6] == board[4] == board[2] != "")):
+            whiteboard()
+            print("Le joueur 2 a gagné")
