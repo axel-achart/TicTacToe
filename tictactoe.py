@@ -36,3 +36,19 @@ def whiteboard():
     print(board[6], " | ", board[7], " | ", board[8])
 whiteboard()
 print()
+
+#---------------------------------------------------------------------------------------
+# Demande et affichage (ou non) du tableau avec les emplacements
+question_1 = input("Si vous voulez afficher le tableau des emplacements, entrez 'o' pour OUI ou 'n' pour NON : ")
+if question_1 == "o":
+    print()
+    print("Voici le tableau comportant les emplacements attribués :")
+    print(emplacement["E1"])
+    print(emplacement["E2"])
+    print(emplacement["E3"])
+    print()
+elif question_1 == "n":
+    print()
+    print("Le tableau des emplacements ne s'affiche pas")
+    print()
+#---------------------------------------------------------------------------------------
