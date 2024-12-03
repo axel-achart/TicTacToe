@@ -1,18 +1,17 @@
-"""Faire des "grilles" (Pour IA/Dev Log)
-
-# Si toutes les cases utilisés mais pas d'alignement =  match nul
-# 3 cases alignés (horizontal, vertical, diagonal[2]) = match gagné
-
-# Si tout le jeu est fini, faire le "bonus" :
-# - qui joue le first coup (IA) : Dans un autre fichier
-
-# Faire un tableau de jeu différent (en affichant les barres vertical)
-# plateau = [''] * 9
-# print(f"| {plateau[0]} |", f"| {plateau[1]} |", f"| {plateau[2]} |")
-# print(f"| {plateau[3]} |", f"| {plateau[4]} |", f"| {plateau[5]} |")
-# print(f"| {plateau[7]} |", f"| {plateau[8]} |", f"| {plateau[9]} |")"""
-
-
+""" WINABLE OU NON
+if ((board[0] == board[1] == board[2] != "") or # WIN Lignes
+        (board[3] == board[4] == board[5] != "") or
+        (board[6] == board[7] == board[8] != "") or
+        (board[0] == board[3] == board[6] != "") or # WIN Colonnes
+        (board[1] == board[4] == board[7] != "") or
+        (board[2] == board[5] == board[8] != "") or
+        (board[0] == board[4] == board[8] != "") or # WIN Diagonales
+        (board[6] == board[4] == board[2] != "")):
+        whiteboard()
+        print("Le joueur 2 a gagné")
+        break
+elif rempli() == True:
+    print("Match nul")"""
 
 
 ## FIRST VERSION (1V1)
