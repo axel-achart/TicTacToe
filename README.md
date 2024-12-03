@@ -7,6 +7,6 @@ Réaliser en **python** un Tic Tac Toe, c'est-à-dire un morpion, opposant le co
 Avec *3 issues* possibles :
 - Si mes 3 cases sont alignés **WIN ✅**
 - Si les 3 cases adverses sont alignés **LOSE ❌**
-- Si aucunes cases de 3 sont alignés **DRAW 🆗**
+- Si aucunes cases de 3 sont alignés **DRAW 🆗** 
 
 En collaboration, [AHAMRI Oualid](https://github.com/oualidahamri) X  [ACHART Axel](https://github.com/axel-achart)
