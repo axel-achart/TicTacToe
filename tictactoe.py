@@ -1,0 +1,38 @@
+"""Faire des "grilles" (Pour IA/Dev Log)
+
+# Si toutes les cases utilisés mais pas d'alignement =  match nul
+# 3 cases alignés (horizontal, vertical, diagonal[2]) = match gagné
+
+# Si tout le jeu est fini, faire le "bonus" :
+# - qui joue le first coup (IA) : Dans un autre fichier
+
+# Faire un tableau de jeu différent (en affichant les barres vertical)
+# plateau = [''] * 9
+# print(f"| {plateau[0]} |", f"| {plateau[1]} |", f"| {plateau[2]} |")
+# print(f"| {plateau[3]} |", f"| {plateau[4]} |", f"| {plateau[5]} |")
+# print(f"| {plateau[7]} |", f"| {plateau[8]} |", f"| {plateau[9]} |")"""
+
+
+
+
+## FIRST VERSION (1V1)
+
+# Dictionnaires définis
+board=[" ",]*9
+emplacement = {
+    "E1" : ["1", "2", "3"],
+    "E2" : ["4", "5", "6"],
+    "E3" : ["7", "8", "9"]
+}
+
+# Afficher le tableau de jeu vide
+print()
+def whiteboard():
+    print("Tableau de jeu TicTacToe :")
+    print(board[0], " | ", board[1], " | ", board[2])
+    print("-------------")
+    print(board[3], " | ", board[4], " | ", board[5])
+    print("-------------")
+    print(board[6], " | ", board[7], " | ", board[8])
+whiteboard()
+print()
