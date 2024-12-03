@@ -79,3 +79,62 @@ def winable():
             (board[6] == board[4] == board[2] != "")):
             whiteboard()
             print("Le joueur 2 a gagné")
+
+# Proposition pour où jouer
+for h in range(1):
+    joueur_1 = input("Joueur 1 : Choisissez votre signe entre 'X' et 'O' : ")
+    joueur_2 = ''
+    if joueur_1 == 'X':
+        joueur_2 = 'O'
+        print()
+        print("Alors le joueur 2 a le signe 'O'")
+    elif joueur_1 == 'O':
+        joueur_2 = 'X'
+        print()
+        print("Alors le joueur 2 a le signe 'X'")
+    else:
+        continue
+    print()
+
+
+# MAIN
+while winable() == False:
+    print()
+    whiteboard()
+    print()
+    choix_1 = int(input("Joueur 1 : Où voulez-vous jouer ? "))
+    if 1 <= choix_1 <= 9:    # Joueur  1
+        for pas_à_pas in board:   
+            board[choix_1 - 1] = joueur_1
+    if ((board[0] == board[1] == board[2] != "") or # WIN Lignes
+            (board[3] == board[4] == board[5] != "") or
+            (board[6] == board[7] == board[8] != "") or
+            (board[0] == board[3] == board[6] != "") or # WIN Colonnes
+            (board[1] == board[4] == board[7] != "") or
+            (board[2] == board[5] == board[8] != "") or
+            (board[0] == board[4] == board[8] != "") or # WIN Diagonales
+            (board[6] == board[4] == board[2] != "")):
+            whiteboard()
+            print("Le joueur 1 a gagné")
+            
+                
+    whiteboard()
+    print()
+    choix_2 = int(input("Joueur 2 : Où voulez-vous jouer ? "))
+    if 1 <= choix_1 <= 9:    # Joueur  2
+        for pas_à_pas in board:
+            board[choix_2 - 1] = joueur_2
+    if ((board[0] == board[1] == board[2] != "") or # WIN Lignes
+            (board[3] == board[4] == board[5] != "") or
+            (board[6] == board[7] == board[8] != "") or
+            (board[0] == board[3] == board[6] != "") or # WIN Colonnes
+            (board[1] == board[4] == board[7] != "") or
+            (board[2] == board[5] == board[8] != "") or
+            (board[0] == board[4] == board[8] != "") or # WIN Diagonales
+            (board[6] == board[4] == board[2] != "")):
+            whiteboard()
+            print("Le joueur 2 a gagné")
+           
+                
+    else:
+        print("Coup non autorisé, réessayez avec un chiffre entre 1 et 9")
