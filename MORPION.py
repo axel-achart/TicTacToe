@@ -1,14 +1,11 @@
-# affichage de la grille de morpion
+# affichage du tableau 
 grille = [' '] * 9
 print(grille)
 
-# structuré la grille de morpion
+# structure du tableau
 
 def affichage_grille(grille):
-    print("""          |        |    
-      -------------------
-          |        | 
-      -------------------
-          |        | 
-      """)
-affichage_grille(grille)
+ print("""  |      |
+---------------------
+       |     |      """)
+ print affichage_grille)
