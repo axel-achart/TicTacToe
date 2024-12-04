@@ -109,11 +109,6 @@ def main():
             current_player = joueur_2 
         else: 
             current_player = joueur_1
-
-    # Si personne n'a gagné après les 9 tours
-    if not result:
-        whiteboard()
-        print("Aucuns alignements, Match nul !")
 main()
 
 print()
