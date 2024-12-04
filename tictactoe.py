@@ -14,7 +14,7 @@ elif rempli() == True:
     print("Match nul")"""
 
 
-## FIRST VERSION (1V1)
+## VERSION (1V1)
 
 board = [" "] * 9
 emplacement = {
