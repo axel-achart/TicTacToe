@@ -17,7 +17,7 @@ elif rempli() == True:
 ## VERSION (1V1)
 
 board = [" "] * 9
-emplacement = {
+places = {
     "E1": ["1", "2", "3"],
     "E2": ["4", "5", "6"],
     "E3": ["7", "8", "9"]
@@ -56,39 +56,39 @@ question_1 = input("Si vous voulez afficher le tableau des emplacements, entrez 
 if question_1 == "o" or question_1 == "O" or question_1 == "OUI" or question_1 == "oui":
     print()
     print("Voici le tableau comportant les emplacements attribués :")
-    print(emplacement["E1"])
-    print(emplacement["E2"])
-    print(emplacement["E3"])
+    print(places["E1"])
+    print(places["E2"])
+    print(places["E3"])
     print()
 elif question_1 == "n" or question_1 == "N" or question_1 == "NON" or question_1 == "non":
     print("Le tableau des emplacements ne s'affiche pas")
 
 
 # Choix des signes pour les joueurs
-joueur_1 = input("Joueur 1 : Choisissez votre signe entre 'X' et 'O' : ").upper()
-while joueur_1 not in ['X', 'O']:
-    joueur_1 = input("Choix invalide. Choisissez 'X' ou 'O' : ").upper()
+player_1 = input("Joueur 1 : Choisissez votre signe entre 'X' et 'O' : ").upper()
+while player_1 not in ['X', 'O']:
+    player_1 = input("Choix invalide. Choisissez 'X' ou 'O' : ").upper()
 
-if joueur_1 == 'X':
-    joueur_2 = 'O'  
+if player_1 == 'X':
+    player_2 = 'O'  
 else: 
-    joueur_2 = 'X'
-print(f"Le joueur 2 a le signe '{joueur_2}'")
+    player_2 = 'X'
+print(f"Le joueur 2 a le signe '{player_2}'")
 
 
 # Boucle principale du jeu
 def main():
-    current_player = joueur_1
+    current_player = player_1
     for turn in range(9):
         whiteboard()
         print()
         print(f"C'est au tour du joueur avec le signe '{current_player}'")
         while True:
             try:
-                choix = int(input("Où voulez-vous jouer (1-9) ? ")) - 1
-                if choix < 0 or choix > 8 or board[choix] != " ":
+                choice = int(input("Où voulez-vous jouer (1-9) ? ")) - 1
+                if choice < 0 or choice > 8 or board[choice] != " ":
                     raise ValueError     # permet à l'utilisateur de lever lui‑même l'exception de son choix, ici "l'erreur"
-                board[choix] = current_player
+                board[choice] = current_player
                 break
             except ValueError:  # la clause except traite non seulement la classe d'exception qu'elle mentionne, mais aussi toutes les classes dérivées de cette classe
                 print("Entrée invalide ou case déjà occupée. Réessayez.")
@@ -105,16 +105,16 @@ def main():
             break
 
         # Change de joueur
-        if current_player == joueur_1:
-            current_player = joueur_2 
+        if current_player == player_1:
+            current_player = player_2 
         else: 
-            current_player = joueur_1
+            current_player = player_1
 main()
 
 print()
 while True:
-    rejouer = input("Voulez-vous rejouez ? (o/n) : ")
-    if rejouer == "o" or rejouer == "oui" or rejouer == "OUI":
+    replay = input("Voulez-vous rejouez ? (o/n) : ")
+    if replay == "o" or replay == "oui" or replay == "OUI":
         board = [" "] * 9
         main()
     else:
