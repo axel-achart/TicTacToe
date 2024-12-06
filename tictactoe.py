@@ -1,19 +1,3 @@
-""" WINABLE OU NON
-if ((board[0] == board[1] == board[2] != "") or # WIN Lignes
-        (board[3] == board[4] == board[5] != "") or
-        (board[6] == board[7] == board[8] != "") or
-        (board[0] == board[3] == board[6] != "") or # WIN Colonnes
-        (board[1] == board[4] == board[7] != "") or
-        (board[2] == board[5] == board[8] != "") or
-        (board[0] == board[4] == board[8] != "") or # WIN Diagonales
-        (board[6] == board[4] == board[2] != "")):
-        whiteboard()
-        print("Le joueur 2 a gagné")
-        break
-elif rempli() == True:
-    print("Match nul")"""
-
-
 ## VERSION (1V1)
 
 board = [" "] * 9
