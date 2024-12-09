@@ -9,3 +9,5 @@ Avec *3 issues* possibles :
 - Si aucunes cases de 3 sont alignés **DRAW 🆗**
 
 En collaboration, [AHAMRI Oualid](https://github.com/oualidahamri) X  [ACHART Axel](https://github.com/axel-achart)
+
+*Peut évoluer... 🪜*
