@@ -32,6 +32,9 @@ def check_winner():
 
 # Fonction qui fait jouer le bot selon le niveau de difficulté
 def bot_move(bot_sign, player_sign, level):
+    # Facile : jouer au hasard
+    # Moyen : Vérifie si la win est possible ou alors bloquer
+    # Difficile : Priorise les emplacements du milieu et les coins
     if level == "facile":
         # Joue une case aléatoire
         empty_positions = [i for i in range(9) if board[i] == " "]
