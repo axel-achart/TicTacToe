@@ -91,23 +91,22 @@ else:
     bot_sign = 'X'
 print(f"Le bot joue avec le signe '{bot_sign}'")
 
-# Choix du niveau de difficulté
-print()
-print("Choisissez le niveau de difficulté :")
-print("1. Facile\n2. Moyen\n3. Difficile")
-print()
-difficulty = input("Entrez 1, 2 ou 3 : ")
-while difficulty not in ['1', '2', '3']:
-    difficulty = input("Choix invalide. Entrez 1, 2 ou 3 : ")
-
-if difficulty == '1':
-    level = "facile"
-elif difficulty == '2':
-    level = "moyen"
-else:
-    level = "difficile"
-
 def main():
+    # Choix du niveau de difficulté
+    print()
+    print("Choisissez le niveau de difficulté :")
+    print("1. Facile\n2. Moyen\n3. Difficile")
+    print()
+    difficulty = input("Entrez 1, 2 ou 3 : ")
+    while difficulty not in ['1', '2', '3']:
+        difficulty = input("Choix invalide. Entrez 1, 2 ou 3 : ")
+
+    if difficulty == '1':
+        level = "facile"
+    elif difficulty == '2':
+        level = "moyen"
+    else:
+        level = "difficile"
     current_player = "player"
     for turn in range(9):
         whiteboard()
