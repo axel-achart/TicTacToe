@@ -1,4 +1,4 @@
-## VERSION (1 VS bot)
+## VERSION 1 VS BOT
 
 import random
 
@@ -30,24 +30,36 @@ def check_winner():
         return "draw"  # Match nul
     return None  # Pas encore de gagnant
 
-# Fonction qui fait jouer le bot
-def bot_move(bot_sign, player_sign):
-    # Vérifie si le bot peut gagner
-    for combo in [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]:
-        values = [board[i] for i in combo]
-        if values.count(bot_sign) == 2 and values.count(" ") == 1:
-            return combo[values.index(" ")]
+# Fonction qui fait jouer le bot selon le niveau de difficulté
+def bot_move(bot_sign, player_sign, level):
+    if level == "facile":
+        # Joue une case aléatoire
+        empty_positions = [i for i in range(9) if board[i] == " "]
+        return random.choice(empty_positions)
 
-    # Vérifie si le bot doit bloquer le joueur
-    for combo in [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]:
-        values = [board[i] for i in combo]
-        if values.count(player_sign) == 2 and values.count(" ") == 1:
-            return combo[values.index(" ")]
+    elif level == "moyen" or level == "difficile":
+        # Vérifie si le bot peut gagner
+        for combo in [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]:
+            values = [board[i] for i in combo]
+            if values.count(bot_sign) == 2 and values.count(" ") == 1:
+                return combo[values.index(" ")]
 
-    # Si aucune action critique, joue la première case libre
-    for i in range(9):
-        if board[i] == " ":
-            return i
+        # Vérifie si le bot doit bloquer le joueur
+        for combo in [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]:
+            values = [board[i] for i in combo]
+            if values.count(player_sign) == 2 and values.count(" ") == 1:
+                return combo[values.index(" ")]
+
+        if level == "difficile":
+            # Préfère les positions stratégiques (centre, coins)
+            for priority in [4, 0, 2, 6, 8, 1, 3, 5, 7]:
+                if board[priority] == " ":
+                    return priority
+
+        # Si aucune action critique, joue la première case libre
+        for i in range(9):
+            if board[i] == " ":
+                return i
 
 print()
 print("Vous allez jouer contre un bot")
@@ -76,6 +88,22 @@ else:
     bot_sign = 'X'
 print(f"Le bot joue avec le signe '{bot_sign}'")
 
+# Choix du niveau de difficulté
+print()
+print("Choisissez le niveau de difficulté :")
+print("1. Facile\n2. Moyen\n3. Difficile")
+print()
+difficulty = input("Entrez 1, 2 ou 3 : ")
+while difficulty not in ['1', '2', '3']:
+    difficulty = input("Choix invalide. Entrez 1, 2 ou 3 : ")
+
+if difficulty == '1':
+    level = "facile"
+elif difficulty == '2':
+    level = "moyen"
+else:
+    level = "difficile"
+
 def main():
     current_player = "player"
     for turn in range(9):
@@ -95,7 +123,7 @@ def main():
                     print("Entrée invalide ou case déjà occupée. Réessayez.")
         else:
             print("C'est au tour du bot...")
-            bot_choice = bot_move(bot_sign, player_sign)
+            bot_choice = bot_move(bot_sign, player_sign, level)
             board[bot_choice] = bot_sign
 
         result = check_winner()
