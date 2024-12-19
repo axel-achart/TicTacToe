@@ -8,4 +8,6 @@ Avec *3 issues* possibles :
 - Si mes 3 cases sont alignés **WIN ✅**
 - Si aucunes cases de 3 sont alignés **DRAW 🆗**
 
-En collaboration, [AHAMRI Oualid](https://github.com/oualidahamri) X  [ACHART Axel](https://github.com/axel-achart)
+En collaboration, [AHAMRI Oualid](https://github.com/oualidahamri) (Fichier MORPION.py)  X  [ACHART Axel](https://github.com/axel-achart) (Fichier tictactoe.py)
+
+*Peut évoluer... 🪜*
