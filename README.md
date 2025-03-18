@@ -1,6 +1,6 @@
 # 🎲 Tic-Tac-Toe
 
-This project is a **Tic-Tac-Toe** game implemented in **Python**. It allows two players to take turns marking spaces on a 3x3 grid via the command-line interface.
+This project is a **Tic-Tac-Toe** game implemented in **Python**. It allows two players to take turns marking spaces on a 3x3 grid via the command-line interface. and player VS bot with different difficulties.
 
 ## 📂 Repository Contents
 
