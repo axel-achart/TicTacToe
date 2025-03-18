@@ -1,18 +1,15 @@
-# Project
-Projet en groupe (de 2). Réaliser un Tic Tac Toe (Morpion)
-</br>
-## Objectif 🚀
-Réaliser en **python** un Tic Tac Toe, c'est-à-dire un morpion, opposant deux utilisateurs.
-</br>
-Avec *3 issues* possibles :
-- Si mes 3 cases sont alignés **WIN ✅**
-- Si aucunes cases de 3 sont alignés **DRAW 🆗**
+# 🎲 Tic-Tac-Toe
 
-En collaboration, [AHAMRI Oualid](https://github.com/oualidahamri) (Fichier MORPION.py)  X  [ACHART Axel](https://github.com/axel-achart) (Fichier tictactoe.py)
+Ce projet est une implémentation du célèbre jeu **Tic-Tac-Toe** (Morpion) en **Python**. Il permet à deux joueurs de s'affronter en tour par tour via l'interface en ligne de commande. Mais également joueur vs bot
 
-A l'aide d'outils comme *GitHub, Canva, Trello et Google Chat,* le travail en équipe a été d'une **excellente qualité.** </br>
-</br>
-Un projet comme celui-ci m'a permis de développer mes **compétences techniques** en programmation notamment en Python avec VS Code. </br>
-Mais également en compétences générales tels que le travail d'équipe, la collaboration, l'organisation, la priorisation des tâches, la résolution de problèmes et plus encore... </br>
-</br>
-La réalisation de ce projet a duré 5 jours. Et une soutenance oral permettant de nous entraîner sur notre présentation a été évalué en fin de projet. </br>
+## 📂 Contenu du Dépôt
+
+Le projet est organisé comme suit :
+
+- **`tictactoe.py`** : Script principal contenant la logique du jeu.
+- **`README.md`** : Documentation du projet.
+- **`.gitignore`** : Fichier pour exclure certains fichiers inutiles dans Git.
+
+## 🛠️ Langages et Technologies Utilisés
+
+- **Python** : Langage principal utilisé pour développer le jeu.
