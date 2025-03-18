@@ -1,15 +1,13 @@
 # 🎲 Tic-Tac-Toe
 
-Ce projet est une implémentation du célèbre jeu **Tic-Tac-Toe** (Morpion) en **Python**. Il permet à deux joueurs de s'affronter en tour par tour via l'interface en ligne de commande. Mais également joueur vs bot
+This project is a **Tic-Tac-Toe** game implemented in **Python**. It allows two players to take turns marking spaces on a 3x3 grid via the command-line interface.
 
-## 📂 Contenu du Dépôt
+## 📂 Repository Contents
 
-Le projet est organisé comme suit :
+- **`tictactoe.py`** – Main script containing the game logic.
+- **`README.md`** – Project documentation.
+- **`.gitignore`** – Specifies files to be ignored by Git.
 
-- **`tictactoe.py`** : Script principal contenant la logique du jeu.
-- **`README.md`** : Documentation du projet.
-- **`.gitignore`** : Fichier pour exclure certains fichiers inutiles dans Git.
+## 🛠️ Technologies Used
 
-## 🛠️ Langages et Technologies Utilisés
-
-- **Python** : Langage principal utilisé pour développer le jeu.
+- **Python** – The primary programming language for the game.
